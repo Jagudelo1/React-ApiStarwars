@@ -1,0 +1,38 @@
+.h1_text{
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 2px 2px 2px white;
+  font-weight: 800;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.Cards_Api{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.ButtonPersonajes{
+  display: grid;
+  place-content: center;
+  margin-top: 40px;
+}
+
+.ButtonPersonajes button{
+  border: 0;
+  padding: 7px 15px;
+  border-radius: 7px;
+  background-color: #000;
+  box-shadow: 0 2px 8px 2px #fff !important;
+  transition: all .3s ease-in;
+  color: #fff !important;
+  font-weight: 700 !important;
+}
+
+.ButtonPersonajes button:hover{
+  box-shadow: 0 2px 8px 2px #888686 !important;
+  color: #888686 !important;
+  transition: all .3s ease-in;
+}

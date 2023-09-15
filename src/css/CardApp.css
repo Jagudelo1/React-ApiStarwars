@@ -1,0 +1,28 @@
+.Card{
+  background-color: #000 !important;
+  box-shadow: 0 2px 12px 2px #fff !important;
+  border-radius: 12px !important;
+  transition: all .3s ease-in;
+  margin: 0 auto;
+}
+
+.Card:hover{
+  transition: all .3s ease-in;
+  box-shadow: 0 2px 12px 2px #888686 !important;
+}
+
+.Card img{
+  border-top-right-radius: 12px !important;
+  border-top-left-radius: 12px !important;
+}
+
+.title_card{
+  text-align: center !important;
+  font-weight: 800 !important;
+  color: #fff !important;
+  text-transform: uppercase !important;
+}
+
+.text_card{
+  color: #fff !important;
+}
