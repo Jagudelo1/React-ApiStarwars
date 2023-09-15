@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom'
-import "./NavbarApp.css";
+import "../../css/NavbarApp.css";
 import { AiFillHome } from 'react-icons/ai';
 import { BiSolidUser, BiSolidPlanet } from 'react-icons/bi';
 
