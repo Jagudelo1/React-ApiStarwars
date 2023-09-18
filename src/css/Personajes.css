@@ -1,0 +1,12 @@
+.TitlePerson{
+    margin-top: 30px !important;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #fff !important;
+}
+
+.ContentPersonajes hr{
+    margin-bottom: 40px !important;
+    border: 2px solid #fff !important;
+}

@@ -1,0 +1,35 @@
+/*<----- Estilos para organizar las cards ----->*/
+.ContentPerson{
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+/*<----- Estilos para el contenedor principal de la Card ----->*/
+.card{
+    display: block !important;
+    border: 0 !important;
+    margin: 0 auto !important;
+    background-color: #000 !important;
+    color: #fff  !important;
+    box-shadow: 0 0 8px 2px #fff !important;
+}
+
+/*<----- Estilos para el scroll de la info de los personajes y planetas ----->*/
+.TextCard{
+    height: 140px;
+    overflow-y: auto;
+}
+
+.TextCard::-webkit-scrollbar {
+    width: 4px;
+}
+  
+.TextCard::-webkit-scrollbar-track { 
+  background-color: #000;
+}
+  
+.TextCard::-webkit-scrollbar-thumb {
+  background-color: #fff;
+}
