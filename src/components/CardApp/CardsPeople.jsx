@@ -7,6 +7,7 @@ import Card from 'react-bootstrap/Card';
 import StarWars from '../../Img/Img2.jpg'; 
 import { Link } from "react-router-dom";
 import { AiFillStar } from 'react-icons/ai'
+import { Personajes } from "../Personajes/Personajes";
 
 export function CardsPeople () {
     //Personajes//
@@ -20,8 +21,6 @@ export function CardsPeople () {
     useEffect(() => {
         allPage(counter)
     }, [person, counter, allPage]);
-
-    
 
     return(
         <>
@@ -59,7 +58,7 @@ export function CardsPeople () {
                                 </Card.Body>
                                 <div className="ContainerButton">
                                     <Link to={`/Personaje/${person.url.split('/')[5]}`}>
-                                        <Button className="ButtonDetails">
+                                        <Button className="ButtonDetails" key={Personajes.name}>
                                             Más Detalles
                                         </Button>
                                     </Link>

@@ -1,0 +1,60 @@
+/*<----- Estilos para el boton de retroceder ----->*/
+.Button_Atras{
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+/*<----- Estilos para la card ----->*/
+.DetallesP{
+    margin-top: 25px;
+    margin-bottom: 35px;
+}
+
+/*<----- Estilos del texto para la card de detalles ----->*/
+.Content_Text{
+    height: 170px;
+    overflow-y: auto;
+}
+
+.Content_Text::-webkit-scrollbar {
+    width: 4px;
+}
+  
+.Content_Text::-webkit-scrollbar-track { 
+  background-color: #000;
+}
+  
+.Content_Text::-webkit-scrollbar-thumb {
+  background-color: #fff;
+}
+
+.card-text{
+    color: red !important;
+    font-weight: 700 !important;
+}
+
+.card-text span{
+    color: #fff !important;
+}
+
+/*<----- Estilos para la informacion del personaje/planeta ----->*/
+.InfoDetalle{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+.InfoDetalle h3{
+    grid-column: 1 / 4;
+    text-align: center;
+    color: #fff !important;
+    font-weight: 800;
+}
+
+.InfoDetalle h3 hr{
+    border: 2px solid #fff !important;
+}
+
+/*<-------------------- Estilos para los componentes de Detalles -------------------->*/
+.DetallesContainer{
+    margin-bottom: 35px;
+}

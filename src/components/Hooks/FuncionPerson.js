@@ -5,6 +5,13 @@ const allPerson = async (state) => {
     state(peticion.data.results);
 }
 
+const idPerson = async (id) => {
+    const peticion = await fetch(`https://swapi.dev/api/people/${id}/`);
+    const data = peticion.json();
+    return data
+}
+
 export {
-    allPerson
+    allPerson,
+    idPerson
 }
