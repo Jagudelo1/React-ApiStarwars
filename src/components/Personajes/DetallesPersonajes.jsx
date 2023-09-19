@@ -43,13 +43,24 @@ export function DetallesPersonaje () {
                     </Card.Body>
                 </Card>
             </div>
-            <div className="InfoDetalle">
-                <h3>Peliculas <hr/></h3>
-                {
-                    detalleP?.films?.map((item1, index1) => {
-                        return <Films url={item1} key={index1}/>
-                    })
-                }
+            <div className="Informacion_Detalles">
+                <h4>Peliculas <hr/></h4>
+                <div className="InfoDetalle">
+                    {
+                        detalleP?.films?.map((item1, index1) => {
+                            return <Films url={item1} key={index1}/>
+                        })
+                    }
+                </div>
+
+                <h4>Naves <hr/></h4>
+                <div className="InfoDetalle">
+                    {
+                        detalleP?.films?.map((item1, index1) => {
+                            return <Films url={item1} key={index1}/>
+                        })
+                    }
+                </div>
             </div>
             <FooterApp/>
         </>
