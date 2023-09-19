@@ -11,7 +11,7 @@ export const Vehicles = ({url}) => {
 
     return(
         <div className="DetallesContainer">
-            <Card style={{ width: '21rem', height: '11rem' }}>
+            <Card style={{ width: '21rem'}}>
                 <Card.Body>
                     <Card.Text>
                         Nombre: <span>{data3.name}</span>

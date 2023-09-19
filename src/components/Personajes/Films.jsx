@@ -11,7 +11,7 @@ export const Films = ({url}) => {
 
     return(
         <div className="DetallesContainer">
-            <Card style={{ width: '21rem', height: '11rem' }}>
+            <Card style={{ width: '21rem'}}>
                 <Card.Body>
                     <Card.Text>
                         Creado: <span>{data1.created}</span>
