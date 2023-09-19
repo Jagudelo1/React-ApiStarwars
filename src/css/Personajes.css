@@ -4,6 +4,7 @@
     text-transform: uppercase;
     font-weight: 800;
     color: #fff !important;
+    text-shadow: 0 5px 5px red;
 }
 
 .ContentPersonajes hr{

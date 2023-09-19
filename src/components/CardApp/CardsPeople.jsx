@@ -6,8 +6,9 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import StarWars from '../../Img/Img2.jpg'; 
 import { Link } from "react-router-dom";
+import { AiFillStar } from 'react-icons/ai'
 
-export function Cards () {
+export function CardsPeople () {
     //Personajes//
     useEffect(() => {
         allPerson(setPerson);
@@ -29,43 +30,40 @@ export function Cards () {
                     ? person.map((person) => (
                         <div key={setPerson} className="ContentP">
                             <Card style={{ width: '18rem' }}>
-                                <Card.Img 
-                                    variant="top" 
-                                    src={StarWars} />
+                                <Card.Img  variant="top" src={StarWars} />
                                 <Card.Title>
                                     {person.name}
                                 </Card.Title>
                                 <Card.Body className="TextCard">
-                                        <Card.Text>
-                                            <span>Altura:</span> {person.height}
-                                        </Card.Text>
                                     <Card.Text>
-                                        <span>Masa:</span> {person.mass}
+                                        <p><AiFillStar/>Altura: <span>{person.height}</span> </p> 
                                     </Card.Text>
                                     <Card.Text>
-                                        <span>Color de Cabello:</span> {person.hair_color}
+                                        <p><AiFillStar/>Masa: <span>{person.mass}</span></p> 
                                     </Card.Text>
                                     <Card.Text>
-                                        <span>Color de Piel:</span> {person.skin_color}
+                                        <p><AiFillStar/>Color de Cabello: <span>{person.hair_color}</span></p> 
                                     </Card.Text>
                                     <Card.Text>
-                                        <span>Color de Ojos:</span> {person.eye_color}
+                                        <p><AiFillStar/>Color de Piel: <span>{person.skin_color}</span></p> 
                                     </Card.Text>
                                     <Card.Text>
-                                        <span>Cumpleaños:</span> {person.birth_year}
+                                        <p><AiFillStar/>Color de Ojos: <span>{person.eye_color}</span></p> 
                                     </Card.Text>
                                     <Card.Text>
-                                        <span>Genero: </span> {person.gender}
+                                        <p><AiFillStar/>Cumpleaños: <span>{person.birth_year}</span></p> 
+                                    </Card.Text>
+                                    <Card.Text>
+                                        <p><AiFillStar/>Genero: <span>{person.gender}</span></p> 
                                     </Card.Text>
                                 </Card.Body>
-                                <Button
-                                    key={person.name}
-                                    className="ButtonDetails"
-                                >
+                                <div className="ContainerButton">
                                     <Link to={`/Personaje/${person.url.split('/')[5]}`}>
-                                        Más Detalles
+                                        <Button className="ButtonDetails">
+                                            Más Detalles
+                                        </Button>
                                     </Link>
-                                </Button>
+                                </div>
                             </Card>
                         </div>
                     ))
@@ -74,7 +72,7 @@ export function Cards () {
             </div>
             <div className="ButtonPage">
                 <button onClick={dismin}>
-                    Atrás
+                    Retroceder
                 </button>
                 <b>{counter}</b>
                 <button onClick={aumen}>

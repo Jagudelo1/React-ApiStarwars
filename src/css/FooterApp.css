@@ -32,9 +32,21 @@
     color: #888686 !important;
 }
 
-.SubtitleFooter h4{
-    text-align: center;
+.SubtitleFooter{
     color: #fff;
+}
+
+.CopyRight{
+    grid-column: 1 / 4;
+    text-align: center;
+    background-color: #121111;
+    color: #fff;
+    font-weight: 800;
+    padding: 15px !important;
+}
+
+.CopyRight p{
+    margin: 0 !important;
 }
 
 @media (max-width: 900px){

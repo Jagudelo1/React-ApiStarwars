@@ -18,9 +18,13 @@ export function FooterApp(){
                     <Link to='/'>Api_StarWars</Link>
                 </div>
                 <div className="SubtitleFooter">
-                    <h4>Blog</h4>
+                    <h4>Autor</h4>
+                    <h5>Juan David Agudelo</h5>
                 </div>
             </footer>
+            <div className="CopyRight">
+                <p>@CopyRight ©2023 - Blog</p>
+            </div>
         </>
     )
 }
