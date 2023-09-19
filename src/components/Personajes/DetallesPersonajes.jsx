@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavbarApp } from "../NavbarApp/NavbarApp";
+import { FooterApp } from "../FooterApp/FooterApp";
 import { FaReply } from 'react-icons/fa';
 import { Link, useParams } from 'react-router-dom';
 import { idPerson } from "../Hooks/FuncionPerson";
@@ -50,6 +51,7 @@ export function DetallesPersonaje () {
                     })
                 }
             </div>
+            <FooterApp/>
         </>
     )
 }

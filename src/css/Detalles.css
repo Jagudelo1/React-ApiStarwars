@@ -39,8 +39,8 @@
 
 /*<----- Estilos para la informacion del personaje/planeta ----->*/
 .InfoDetalle{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)) !important;
 }
 
 .InfoDetalle h3{
