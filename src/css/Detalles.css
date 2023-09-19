@@ -10,6 +10,18 @@
     margin-bottom: 35px;
 }
 
+.DetallesP h2{
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.DetallesP .Span_{
+    text-decoration: underline;
+    color: red;
+}
+
 /*<----- Estilos del texto para la card de detalles ----->*/
 .Content_Text{
     height: 170px;

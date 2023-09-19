@@ -2,28 +2,28 @@ import React, { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
 import "../../css/Detalles.css";
 
-export const Species = ({url}) => {
-    const [ data2, setData2 ] = useState([])
+export const Starships = ({url}) => {
+    const [ data4, setData4 ] = useState([]);
 
     useEffect(() => {
-        fetch(url).then(res => res.json()).then(data2 => setData2(data2))
+        fetch(url).then(res => res.json()).then(data4 => setData4(data4))
     }, [url])
-    
-    return(
+
+    return (
         <div className="DetallesContainer">
             <Card style={{ width: '21rem', height: '11rem' }}>
                 <Card.Body>
                     <Card.Text>
-                        Nombre: <span>{data2.name}</span>
+                        Nombre: <span>{data4.name}</span>
                     </Card.Text>
                     <Card.Text>
-                        Clasificación: <span>{data2.classification}</span>
+                        Modelo: <span>{data4.model}</span>
                     </Card.Text>
                     <Card.Text>
-                        Designación: <span>{data2.designation}</span>
+                        Fabricante: <span>{data4.manufacturer}</span>
                     </Card.Text>
                     <Card.Text>
-                        Altura Media: <span>{data2.average_height}</span>
+                        Costo en Créditos: <span>{data4.cost_in_credits}</span>
                     </Card.Text>
                 </Card.Body>
             </Card>

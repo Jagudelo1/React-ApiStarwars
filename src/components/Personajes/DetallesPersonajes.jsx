@@ -5,9 +5,12 @@ import { FaReply } from 'react-icons/fa';
 import { Link, useParams } from 'react-router-dom';
 import { idPerson } from "../Hooks/FuncionPerson";
 import Card from 'react-bootstrap/Card';
-import Personaje from "../../Img/Img1.jpg"
-import "../../css/Detalles.css";
 import { Films } from "./Films";
+import { Species } from "./Species";
+import { Vehicles } from "./vehicles";
+import { Starships } from "./Starships";
+import "../../css/Detalles.css";
+import Personaje from "../../Img/Img1.jpg"
 
 export function DetallesPersonaje () {
     const [ detalleP, setDetalleP ] = useState([]);
@@ -28,11 +31,11 @@ export function DetallesPersonaje () {
                 </Link>
             </div>
             <div className="DetallesP">
+                <h2>Detalles de <span className="Span_">{detalleP.name}</span></h2>
                 <Card style={{ width: '20rem' }}>
                     <Card.Img variant="top" src={Personaje} />
                     <Card.Title>{detalleP.name}</Card.Title>
                     <Card.Body className="Content_Text">
-                        <Card.Text>Nombre: <span>{detalleP.name}</span></Card.Text>
                         <Card.Text>Altura: <span>{detalleP.height}</span></Card.Text>
                         <Card.Text>Masa: <span>{detalleP.mass}</span></Card.Text>
                         <Card.Text>Color de Pelo: <span>{detalleP.hair_color}</span></Card.Text>
@@ -44,22 +47,56 @@ export function DetallesPersonaje () {
                 </Card>
             </div>
             <div className="Informacion_Detalles">
-                <h4>Peliculas <hr/></h4>
-                <div className="InfoDetalle">
-                    {
-                        detalleP?.films?.map((item1, index1) => {
-                            return <Films url={item1} key={index1}/>
-                        })
-                    }
+                <div>
+                    {detalleP?.films?.length > 0 && (
+                        <h4>Peliculas <hr/></h4>
+                    )}
+                    <div className="InfoDetalle">
+                        {
+                            detalleP?.films?.map((item1, index1) => {
+                                return <Films url={item1} key={index1} />
+                            })
+                        }
+                    </div>
                 </div>
 
-                <h4>Naves <hr/></h4>
-                <div className="InfoDetalle">
-                    {
-                        detalleP?.films?.map((item1, index1) => {
-                            return <Films url={item1} key={index1}/>
-                        })
-                    }
+                <div>
+                    {detalleP?.species?.length > 0 && (
+                        <h4>Especies <hr/></h4>
+                    )}
+                    <div className="InfoDetalle">
+                        {
+                            detalleP?.species?.map((item2, index2) => {
+                                return <Species url={item2} key={index2} />
+                            })
+                        }
+                    </div>
+                </div>
+
+                <div>
+                    {detalleP?.vehicles?.length > 0 && (
+                        <h4>Vehiculos <hr/></h4>
+                    )}
+                    <div className="InfoDetalle">
+                        {  
+                            detalleP?.vehicles?.map((item3, index3) => {
+                            return <Vehicles url={item3} key={index3} />
+                            })
+                        }
+                    </div>
+                </div>
+                
+                <div>
+                    {detalleP?.starships?.length > 0 && (
+                        <h4>Naves Estelares <hr/></h4>
+                    )}
+                    <div className="InfoDetalle">
+                        {  
+                            detalleP?.starships?.map((item4, index4) => {
+                            return <Starships url={item4} key={index4} />
+                            })
+                        }
+                    </div>
                 </div>
             </div>
             <FooterApp/>
