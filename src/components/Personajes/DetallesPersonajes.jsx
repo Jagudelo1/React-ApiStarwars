@@ -7,7 +7,6 @@ import { idPerson } from "../Hooks/FuncionPerson";
 import Card from 'react-bootstrap/Card';
 import { Films } from "./Films";
 import { Species } from "./Species";
-import { Vehicles } from "./vehicles";
 import { Starships } from "./Starships";
 import Personaje from "../../Img/Img1.jpg";
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
@@ -95,19 +94,6 @@ export function DetallesPersonaje () {
                         {
                             detalleP?.species?.map((item2, index2) => {
                                 return <Species url={item2} key={index2} />
-                            })
-                        }
-                    </div>
-                </div>
-
-                <div>
-                    {detalleP?.vehicles?.length > 0 && (
-                        <h4>Vehículos <hr/></h4>
-                    )}
-                    <div className="InfoDetalle">
-                        {  
-                            detalleP?.vehicles?.map((item3, index3) => {
-                            return <Vehicles url={item3} key={index3} />
                             })
                         }
                     </div>
