@@ -76,7 +76,7 @@ export function DetallesPersonaje () {
             <div className="Informacion_Detalles">
                 <div>
                     {detalleP?.films?.length > 0 && (
-                        <h4>Peliculas <hr/></h4>
+                        <h4>Películas <hr/></h4>
                     )}
                     <div className="InfoDetalle">
                         {
@@ -102,7 +102,7 @@ export function DetallesPersonaje () {
 
                 <div>
                     {detalleP?.vehicles?.length > 0 && (
-                        <h4>Vehiculos <hr/></h4>
+                        <h4>Vehículos <hr/></h4>
                     )}
                     <div className="InfoDetalle">
                         {  
