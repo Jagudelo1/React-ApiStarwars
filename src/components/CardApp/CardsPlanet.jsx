@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import '../../css/Cards.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import StarWars from '../../Img/Img2.jpg'; 
@@ -7,6 +6,9 @@ import { Link } from "react-router-dom";
 import { AiFillStar } from 'react-icons/ai'
 import { allPlanet } from "../Hooks/FuncionPlanets";
 import { CounterPlanet } from "../Hooks/CounterPlanet";
+import { BsFillArrowUpCircleFill } from "react-icons/bs";
+import '../../css/Cards.css';
+import "../../css/Detalles.css";
 
 export function CardsPlanet () {
     //Personajes//
@@ -21,7 +23,31 @@ export function CardsPlanet () {
         allPages(counter)
     }, [planet, counter, allPages]);
 
-    
+    //Script para el botón desplazar arriba
+    const [showButton, setShowButton] = useState(false);
+
+    const handleScroll = () => {
+        if (window.scrollY > 100) {
+        setShowButton(true);
+        } else {
+        setShowButton(false);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+        window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+        });
+    };
 
     return(
         <>
@@ -61,7 +87,7 @@ export function CardsPlanet () {
                                     </Card.Text>
                                 </Card.Body>
                                 <div className="ContainerButton">
-                                    <Link to={`/Planetas/${planet.url.split('/')[5]}`}>
+                                    <Link to={`/Planeta/${planet.url.split('/')[5]}`}>
                                         <Button className="ButtonDetails">
                                             Más Detalles
                                         </Button>
@@ -81,6 +107,13 @@ export function CardsPlanet () {
                 <button onClick={aumen}>
                     Siguiente
                 </button>
+            </div>
+            <div className="ContentButtonTop">
+                {showButton && (
+                <button className="scroll-to-top" onClick={scrollToTop}>
+                    <BsFillArrowUpCircleFill size={35} className="IconArrow"/>
+                </button>
+                )}
             </div>
         </>
     )

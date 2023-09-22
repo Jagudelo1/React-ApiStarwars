@@ -9,8 +9,9 @@ import { Films } from "./Films";
 import { Species } from "./Species";
 import { Vehicles } from "./vehicles";
 import { Starships } from "./Starships";
+import Personaje from "../../Img/Img1.jpg";
+import { BsFillArrowUpCircleFill } from "react-icons/bs";
 import "../../css/Detalles.css";
-import Personaje from "../../Img/Img1.jpg"
 
 export function DetallesPersonaje () {
     const [ detalleP, setDetalleP ] = useState([]);
@@ -21,6 +22,32 @@ export function DetallesPersonaje () {
     useEffect(() => {
         person.then(res => setDetalleP(res))
     }, [person]);
+
+    //Script para el botón desplazar arriba
+    const [showButton, setShowButton] = useState(false);
+
+    const handleScroll = () => {
+        if (window.scrollY > 100) {
+        setShowButton(true);
+        } else {
+        setShowButton(false);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+        window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+        });
+    };
 
     return(
         <>
@@ -98,6 +125,13 @@ export function DetallesPersonaje () {
                         }
                     </div>
                 </div>
+            </div>
+            <div className="ContentButtonTop">
+                {showButton && (
+                <button className="scroll-to-top" onClick={scrollToTop}>
+                    <BsFillArrowUpCircleFill size={35} className="IconArrow"/>
+                </button>
+                )}
             </div>
             <FooterApp/>
         </>

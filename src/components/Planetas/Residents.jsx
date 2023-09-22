@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
 import "../../css/Detalles.css";
 
-export const Films = ({url}) => {
-    const [ data1, setData1 ] =  useState([]);
+export const Residents = ({url}) => {
+    const [ data1, setData1 ] = useState([]);
 
     useEffect(() => {
         fetch(url).then(res => res.json()).then(data1 => setData1(data1))
@@ -14,25 +14,28 @@ export const Films = ({url}) => {
             <Card style={{ width: '21rem'}}>
                 <Card.Body>
                     <Card.Text>
-                        Titulo Capitulo: <span>{data1.title}</span>
+                        Nombre: <span>{data1.name}</span>
                     </Card.Text>
                     <Card.Text>
-                        Episodio: <span>{data1.episode_id}</span>
+                        Altura: <span>{data1.height}</span>
                     </Card.Text>
                     <Card.Text>
-                        Director: <span>{data1.director}</span>
+                        Masa: <span>{data1.mass}</span>
                     </Card.Text>
                     <Card.Text>
-                        Productor: <span>{data1.producer}</span>
+                        Color de Cabello: <span>{data1.hair_color}</span>
                     </Card.Text>
                     <Card.Text>
-                        Fecha de Lanzamiento: <span>{data1.release_date}</span>
+                        Color de Piel: <span>{data1.skin_color}</span>
                     </Card.Text>
                     <Card.Text>
-                        Creado: <span>{data1.created}</span>
+                        Color de Ojos: <span>{data1.eye_color}</span>
                     </Card.Text>
                     <Card.Text>
-                        Editado: <span>{data1.edited}</span>
+                        Cumpleaños: <span>{data1.birth_year}</span>
+                    </Card.Text>
+                    <Card.Text>
+                        Genero: <span>{data1.gender}</span>
                     </Card.Text>
                 </Card.Body>
             </Card>

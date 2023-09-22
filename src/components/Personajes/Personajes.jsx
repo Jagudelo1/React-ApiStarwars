@@ -1,7 +1,8 @@
 import { NavbarApp } from "../NavbarApp/NavbarApp";
-import '../../css/Personajes.css';
 import { CardsPeople } from "../CardApp/CardsPeople";
 import { FooterApp } from "../FooterApp/FooterApp";
+import '../../css/Personajes.css';
+import "../../css/Detalles.css";
 
 export function Personajes(){
     return(

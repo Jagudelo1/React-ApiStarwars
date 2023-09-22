@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { NavbarApp } from "./NavbarApp/NavbarApp";
 import { SliderApp } from "./SliderApp/SliderApp";
 import '../css/HomeApp.css';
@@ -8,8 +8,45 @@ import Luke from '../Img/Personajes/Luke_Skywalker.png';
 import Obi from '../Img/Personajes/Obi_Wan_Kenobi.jpg';
 import { Link } from "react-router-dom";
 import { FooterApp } from "./FooterApp/FooterApp";
+import "../css/Detalles.css";
+import { BsFillArrowUpCircleFill } from "react-icons/bs";
 
 export function HomeApp(){
+    //Script de carga de pantalla
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+      setTimeout(() => {
+        setLoading(false);
+      }, 4000); // 4 segundos
+    }, []);
+
+    //Script para el botón desplazar arriba
+    const [showButton, setShowButton] = useState(false);
+
+    const handleScroll = () => {
+        if (window.scrollY > 100) {
+        setShowButton(true);
+        } else {
+        setShowButton(false);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+        window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+        });
+    };
+
     return(
         <div>
             <NavbarApp/>
@@ -46,6 +83,13 @@ export function HomeApp(){
                         Ver Más
                     </button>
                 </Link>
+            </div>
+            <div className="ContentButtonTop">
+                {showButton && (
+                <button className="scroll-to-top" onClick={scrollToTop}>
+                    <BsFillArrowUpCircleFill size={35} className="IconArrow"/>
+                </button>
+                )}
             </div>
             <FooterApp/>
         </div>

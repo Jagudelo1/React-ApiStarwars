@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { CounterPerson } from "../Hooks/CounterPerson";
 import { allPerson } from "../Hooks/FuncionPerson";
-import '../../css/Cards.css';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import StarWars from '../../Img/Img2.jpg'; 
 import { Link } from "react-router-dom";
 import { AiFillStar } from 'react-icons/ai'
 import { Personajes } from "../Personajes/Personajes";
+import { BsFillArrowUpCircleFill } from "react-icons/bs";
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import StarWars from '../../Img/Img2.jpg'; 
+import '../../css/Cards.css';
+import "../../css/Detalles.css";
 
 export function CardsPeople () {
     //Personajes//
@@ -21,6 +23,32 @@ export function CardsPeople () {
     useEffect(() => {
         allPage(counter)
     }, [person, counter, allPage]);
+
+    //Script para el botón desplazar arriba
+    const [showButton, setShowButton] = useState(false);
+
+    const handleScroll = () => {
+        if (window.scrollY > 100) {
+        setShowButton(true);
+        } else {
+        setShowButton(false);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+        window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+        });
+    };
 
     return(
         <>
@@ -77,6 +105,13 @@ export function CardsPeople () {
                 <button onClick={aumen}>
                     Siguiente
                 </button>
+            </div>
+            <div className="ContentButtonTop">
+                {showButton && (
+                <button className="scroll-to-top" onClick={scrollToTop}>
+                    <BsFillArrowUpCircleFill size={35} className="IconArrow"/>
+                </button>
+                )}
             </div>
         </>
     )
