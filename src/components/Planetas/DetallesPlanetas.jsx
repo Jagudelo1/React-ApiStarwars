@@ -7,9 +7,9 @@ import { idPlanet } from "../Hooks/FuncionPlanets";
 import Card from 'react-bootstrap/Card';
 import Planeta from "../../Img/Planetas/Planets.jpg";
 import "../../css/Detalles.css";
+import "../../css/Detalles.css";
 import { Residents } from "./Residents";
 import { Films } from "../Personajes/Films";
-import "../../css/Detalles.css";
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
 
 export function DetallesPlanetas () {
