@@ -5,13 +5,6 @@ const allPlanet = async (state) => {
     state(peticion.data.results);
 }
 
-const idPlanet = async (id) => {
-    const peticion = await fetch(`https://swapi.dev/api/planets/${id}`);
-    const data = peticion.json();
-    return data
-}
-
 export {
-    allPlanet,
-    idPlanet
+    allPlanet
 }

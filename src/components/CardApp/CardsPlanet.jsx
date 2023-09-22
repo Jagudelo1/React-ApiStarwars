@@ -86,13 +86,6 @@ export function CardsPlanet () {
                                         <p><AiFillStar/>Población: <span>{planet.population}</span></p> 
                                     </Card.Text>
                                 </Card.Body>
-                                <div className="ContainerButton">
-                                    <Link to={`/Planeta/${planet.url.split('/')[5]}`}>
-                                        <Button className="ButtonDetails">
-                                            Más Detalles
-                                        </Button>
-                                    </Link>
-                                </div>
                             </Card>
                         </div>
                     ))
